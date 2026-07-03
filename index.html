@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IcebergSim — simulation and integrity for randomized trials</title>
+<meta name="description" content="A research program in two instruments: a clinical trial simulator, and a trial integrity instrument built under a public constitution.">
+<style>
+  :root{
+    --ink:#1c2128; --paper:#faf8f4; --accent:#17527b; --dim:#6b7280;
+    --line:#d8d4cc;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#e8e6e1; --paper:#15181d; --accent:#7fb3d5; --dim:#9aa0a6;
+           --line:#2c313a; }
+  }
+  *{ box-sizing:border-box }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:18px/1.65 Charter, Georgia, "Times New Roman", serif;
+  }
+  main{ max-width:42rem; margin:0 auto; padding:4rem 1.25rem 2rem }
+  header{ text-align:center; margin-bottom:3rem }
+  h1{ font-size:2.4rem; font-weight:600; letter-spacing:.01em; margin:.6rem 0 .2rem }
+  .tagline{ color:var(--dim); font-style:italic; margin:0 }
+  h2{ font-size:1.05rem; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--accent); font-weight:600; margin:2.6rem 0 .6rem }
+  p{ margin:.8rem 0 }
+  a{ color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line) }
+  a:hover{ border-bottom-color:var(--accent) }
+  .links{ margin:2.4rem 0; padding:0; list-style:none }
+  .links li{ margin:.55rem 0 }
+  .links .note{ color:var(--dim); font-size:.92em }
+  .waterline{ border:none; border-top:1px solid var(--line); margin:3rem 0 1.5rem }
+  footer{ color:var(--dim); font-size:.85em; text-align:center; padding-bottom:3rem }
+  footer a{ color:var(--dim) }
+  svg{ display:block; margin:0 auto }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <!-- The mark: render above the waterline, mass below. -->
+    <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="An iceberg: a small peak above the waterline, a large mass below.">
+      <line x1="4" y1="52" x2="116" y2="52" stroke="var(--line)" stroke-width="1.5"/>
+      <polygon points="48,52 60,22 74,40 82,52" fill="var(--accent)" opacity=".95"/>
+      <polygon points="48,52 82,52 96,74 72,104 40,88 34,64" fill="var(--accent)" opacity=".38"/>
+    </svg>
+    <h1>IcebergSim</h1>
+    <p class="tagline">Randomized trials are how medicine learns what is true.</p>
+  </header>
+
+  <h2>What this is</h2>
+  <p>IcebergSim is a research program in two instruments. The first is a
+  <strong>clinical trial simulator</strong>: describe a randomized trial,
+  then watch thousands of simulated versions of it run — statistical power,
+  false positives, and what happens when reality gets messy: patients drop
+  out, switch treatments, or get lost along the way. It is open source and
+  running today.</p>
+  <p>The second, in construction, is a <strong>trial integrity
+  instrument</strong>: tools that examine a trial's data and weigh the
+  evidence that it was — or was not — produced the way its authors declare.
+  It flags anomalies and attaches the numbers; judgment stays with
+  humans.</p>
+
+  <h2>Why</h2>
+  <p>The integrity of trials rests mostly on <em>trust</em>: reputation,
+  peer review, institutions. This program works to move part of that weight
+  onto <em>verification</em> — checks that give the same answer no matter
+  who runs them, and no matter how important the author is.</p>
+  <p>Its own rules follow suit. The integrity instrument is being built
+  under a <strong>public constitution</strong>; its real-world test
+  datasets are sealed by cryptographic hash before development may look at
+  them; and no claim about what it can detect will be published before its
+  false-alarm rate exists.</p>
+
+  <h2>The program</h2>
+  <ul class="links">
+    <li><a href="https://github.com/ebergel/icebergsim/blob/main/MAP.md">Read
+      the map</a> — the whole program in plain words.
+      <span class="note">If a section can't be said simply, the thinking
+      isn't finished.</span></li>
+    <li><a href="https://github.com/ebergel/icebergsim-rct">IcebergSim
+      RCT</a> — the simulator: source, specification, tests.</li>
+    <li><a href="https://ebergel.github.io/icebergsim-rct/">Run the
+      simulator</a> — the live demonstration.</li>
+    <li><a href="https://github.com/ebergel/icebergsim-integrity">IcebergSim
+      Integrity</a> — the integrity instrument.
+      <span class="note">In construction. Its subdomain stays empty until
+      the first calibrated number exists.</span></li>
+  </ul>
+
+  <hr class="waterline">
+  <footer>
+    <p>Eduardo Bergel · MIT License ·
+      <a href="https://github.com/ebergel/icebergsim/commits/main/">source
+      &amp; history of this page</a> · July 2026</p>
+    <!-- Optional colophon — uncomment to link, or delete this line:
+    <p><a href="https://t333t.com">essays &amp; background</a></p>
+    -->
+  </footer>
+</main>
+</body>
+</html>
